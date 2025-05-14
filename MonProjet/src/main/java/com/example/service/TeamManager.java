@@ -20,6 +20,31 @@ public class TeamManager {
         loadTeams();
     }
 
+    public boolean removeTeam(String teamName) {
+        return teams.removeIf(team -> team.getName().equals(teamName));
+    }
+
+    public boolean removePlayerFromTeam(String teamName, Player player) {
+        Team team = getTeamByName(teamName);
+        if (team != null) {
+            boolean removed = team.removePlayer(player);
+            // Si l'équipe est vide après suppression, on pourrait la supprimer
+            if (team.getMembers().isEmpty()) {
+                teams.remove(team);
+            }
+            return removed;
+        }
+        return false;
+    }
+
+    private Team getTeamByName(String teamName) {
+        return teams.stream()
+                .filter(team -> team.getName().equals(teamName))
+                .findFirst()
+                .orElse(null);
+    }
+
+
     public void registerPlayer(String firstName, String lastName, boolean isTeamLeader,
                                String teamName) throws RegistrationException {
         // Vérifier la période d'inscription

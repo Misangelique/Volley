@@ -131,3 +131,24 @@
     -fx-text-fill: #e53e3e;
     -fx-font-weight: bold;
 }
+
+/* Bouton de danger (suppression) */
+.danger-button {
+    -fx-background-color: #e53e3e;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.danger-button:hover {
+    -fx-background-color: #c53030;
+}
+
+.danger-button:pressed {
+    -fx-background-color: #9b2c2c;
+}
+
+.danger-button:disabled {
+    -fx-background-color: #feb2b2;
+    -fx-text-fill: #e2e8f0;
+}
+

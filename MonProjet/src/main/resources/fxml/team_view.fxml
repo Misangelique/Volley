@@ -1,49 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
 
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="main.java.com.example.controller.TeamViewController"
-      styleClass="container"
-      spacing="15"
-      alignment="CENTER"
-      prefWidth="800"
-      prefHeight="600">
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="main.java.com.example.controller.TeamViewController"
+            prefHeight="600.0" prefWidth="800.0"
+            stylesheets="/css/style.css">
+    <children>
+        <VBox spacing="15" AnchorPane.topAnchor="20.0" AnchorPane.leftAnchor="20.0"
+              AnchorPane.rightAnchor="20.0" AnchorPane.bottomAnchor="20.0">
 
-    <padding>
-        <Insets top="20" right="20" bottom="20" left="20"/>
-    </padding>
+            <HBox alignment="CENTER_LEFT" spacing="20">
+                <Label text="Liste des équipes" styleClass="header"/>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="refreshButton" text="Actualiser" onAction="#handleRefresh" styleClass="action-button"/>
+            </HBox>
 
-    <Label text="Liste des Équipes" styleClass="header"/>
+            <HBox spacing="15" VBox.vgrow="ALWAYS">
+                <VBox spacing="10" HBox.hgrow="ALWAYS" prefWidth="400">
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Label text="Équipes" styleClass="subheader" HBox.hgrow="ALWAYS"/>
+                        <Button fx:id="deleteTeamButton" text="Supprimer l'équipe"
+                                onAction="#handleDeleteTeam" styleClass="danger-button"/>
+                    </HBox>
+                    <TableView fx:id="teamsTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="teamNameColumn" text="Nom de l'équipe" prefWidth="200"/>
+                            <TableColumn fx:id="leaderNameColumn" text="Chef d'équipe" prefWidth="150"/>
+                            <TableColumn fx:id="memberCountColumn" text="Membres" prefWidth="50"/>
+                        </columns>
+                    </TableView>
+                </VBox>
 
-    <HBox spacing="20" VBox.vgrow="ALWAYS">
-        <VBox spacing="10" HBox.hgrow="ALWAYS">
-            <Label text="Équipes" styleClass="subheader"/>
-            <TableView fx:id="teamsTable" VBox.vgrow="ALWAYS">
-                <columns>
-                    <TableColumn fx:id="teamNameColumn" text="Nom d'équipe" prefWidth="150"/>
-                    <TableColumn fx:id="leaderNameColumn" text="Chef d'équipe" prefWidth="150"/>
-                    <TableColumn fx:id="memberCountColumn" text="Membres" prefWidth="100"/>
-                </columns>
-            </TableView>
+                <VBox spacing="10" HBox.hgrow="ALWAYS" prefWidth="400">
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Label text="Membres de l'équipe" styleClass="subheader" HBox.hgrow="ALWAYS"/>
+                        <Button fx:id="deletePlayerButton" text="Supprimer le joueur"
+                                onAction="#handleDeletePlayer" styleClass="danger-button"/>
+                    </HBox>
+                    <TableView fx:id="playersTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="playerFirstNameColumn" text="Prénom" prefWidth="120"/>
+                            <TableColumn fx:id="playerLastNameColumn" text="Nom" prefWidth="120"/>
+                            <TableColumn fx:id="playerRoleColumn" text="Rôle" prefWidth="160"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </HBox>
+
+            <HBox alignment="CENTER">
+                <Button text="Fermer" onAction="#handleClose" prefWidth="150" styleClass="secondary-button"/>
+            </HBox>
         </VBox>
-
-        <VBox spacing="10" HBox.hgrow="ALWAYS">
-            <Label text="Membres" styleClass="subheader"/>
-            <TableView fx:id="playersTable" VBox.vgrow="ALWAYS">
-                <columns>
-                    <TableColumn fx:id="playerFirstNameColumn" text="Prénom" prefWidth="150"/>
-                    <TableColumn fx:id="playerLastNameColumn" text="Nom" prefWidth="150"/>
-                    <TableColumn fx:id="playerRoleColumn" text="Rôle" prefWidth="100"/>
-                </columns>
-            </TableView>
-        </VBox>
-    </HBox>
-
-    <HBox spacing="10" alignment="CENTER_RIGHT">
-        <Button text="Fermer" onAction="#handleClose" styleClass="secondary" />
-    </HBox>
-</VBox>
+    </children>
+</AnchorPane>

@@ -29,6 +29,15 @@ public class Team {
         return members.size() >= MAX_MEMBERS;
     }
 
+    public boolean removePlayer(Player player) {
+        // Ne pas permettre la suppression du chef d'équipe
+        if (player.isTeamLeader()) {
+            return false;
+        }
+        return members.remove(player);
+    }
+
+
     public boolean containsPlayer(String firstName, String lastName) {
         return members.stream()
                 .anyMatch(p -> p.getFirstName().equalsIgnoreCase(firstName)
