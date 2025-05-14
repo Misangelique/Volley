@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="main.java.com.example.RegisterController"
+            prefHeight="500.0" prefWidth="600.0"
+            stylesheets="/css/style.css">
+    <children>
+        <VBox spacing="20" alignment="CENTER" AnchorPane.topAnchor="20.0" AnchorPane.leftAnchor="40.0"
+              AnchorPane.rightAnchor="40.0" AnchorPane.bottomAnchor="20.0">
+
+            <Label text="Inscription Utilisateur" styleClass="header"/>
+
+            <VBox spacing="15" alignment="CENTER" styleClass="container">
+                <padding>
+                    <Insets top="25" right="25" bottom="25" left="25" />
+                </padding>
+
+                <HBox spacing="15">
+                    <Label text="Nom:" prefWidth="100"/>
+                    <TextField fx:id="nomField" HBox.hgrow="ALWAYS" promptText="Entrez votre nom"/>
+                </HBox>
+
+                <HBox spacing="15">
+                    <Label text="Prénom:" prefWidth="100"/>
+                    <TextField fx:id="prenomField" HBox.hgrow="ALWAYS" promptText="Entrez votre prénom"/>
+                </HBox>
+
+                <HBox spacing="15">
+                    <Label text="Mot de passe:" prefWidth="100"/>
+                    <PasswordField fx:id="passwordField" HBox.hgrow="ALWAYS" promptText="Minimum 6 caractères"/>
+                </HBox>
+
+                <HBox spacing="20" alignment="CENTER" >
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10" />
+                    </padding>
+                    <Button text="Envoyer" onAction="#handleRegister" prefWidth="120" styleClass="action"/>
+                    <Button text="Annuler" onAction="#handleCancel" prefWidth="120" styleClass="secondary"/>
+                </HBox>
+
+                <Label fx:id="messageLabel" styleClass="success-message"/>
+            </VBox>
+
+            <Button text="Voir les utilisateurs" onAction="#showUsers" prefWidth="200"/>
+        </VBox>
+    </children>
+</AnchorPane>

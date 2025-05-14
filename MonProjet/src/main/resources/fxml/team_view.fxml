@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="main.java.com.example.controller.TeamViewController"
+      styleClass="container"
+      spacing="15"
+      alignment="CENTER"
+      prefWidth="800"
+      prefHeight="600">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Liste des Équipes" styleClass="header"/>
+
+    <HBox spacing="20" VBox.vgrow="ALWAYS">
+        <VBox spacing="10" HBox.hgrow="ALWAYS">
+            <Label text="Équipes" styleClass="subheader"/>
+            <TableView fx:id="teamsTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="teamNameColumn" text="Nom d'équipe" prefWidth="150"/>
+                    <TableColumn fx:id="leaderNameColumn" text="Chef d'équipe" prefWidth="150"/>
+                    <TableColumn fx:id="memberCountColumn" text="Membres" prefWidth="100"/>
+                </columns>
+            </TableView>
+        </VBox>
+
+        <VBox spacing="10" HBox.hgrow="ALWAYS">
+            <Label text="Membres" styleClass="subheader"/>
+            <TableView fx:id="playersTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="playerFirstNameColumn" text="Prénom" prefWidth="150"/>
+                    <TableColumn fx:id="playerLastNameColumn" text="Nom" prefWidth="150"/>
+                    <TableColumn fx:id="playerRoleColumn" text="Rôle" prefWidth="100"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Fermer" onAction="#handleClose" styleClass="secondary" />
+    </HBox>
+</VBox>

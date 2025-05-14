@@ -1,0 +1,133 @@
+/* style.css */
+
+/* Styles généraux */
+.root {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-background-color: #f5f5f7;
+    -fx-font-size: 14px;
+}
+
+/* En-têtes */
+.label.header {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2d3748;
+    -fx-padding: 10 0 20 0;
+}
+
+/* Champs de texte */
+.text-field, .password-field {
+    -fx-background-color: white;
+    -fx-background-radius: 4px;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 4px;
+    -fx-padding: 8px;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #3182ce;
+    -fx-background-color: #f8fafc;
+}
+
+/* Boutons */
+.button {
+    -fx-background-color: #4299e1;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4px;
+    -fx-padding: 8 15;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #3182ce;
+}
+
+.button:pressed {
+    -fx-background-color: #2b6cb0;
+}
+
+/* Bouton secondaire */
+.button.secondary {
+    -fx-background-color: #e2e8f0;
+    -fx-text-fill: #4a5568;
+}
+
+.button.secondary:hover {
+    -fx-background-color: #cbd5e0;
+}
+
+.button.secondary:pressed {
+    -fx-background-color: #a0aec0;
+}
+
+/* Bouton d'action */
+.button.action {
+    -fx-background-color: #48bb78;
+}
+
+.button.action:hover {
+    -fx-background-color: #38a169;
+}
+
+.button.action:pressed {
+    -fx-background-color: #2f855a;
+}
+
+/* TableView */
+.table-view {
+    -fx-background-color: white;
+    -fx-background-radius: 4px;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 4px;
+}
+
+.table-view .column-header {
+    -fx-background-color: #4299e1;
+    -fx-text-fill: white;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10px;
+}
+
+.table-view .table-row-cell {
+    -fx-border-color: transparent;
+    -fx-table-cell-border-color: #e2e8f0;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #f8fafc;
+}
+
+.table-view .table-row-cell:even {
+    -fx-background-color: white;
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: #ebf8ff;
+}
+
+/* Conteneurs */
+.container {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 8px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 3);
+}
+
+/* Messages */
+.success-message {
+    -fx-text-fill: #38a169;
+    -fx-font-weight: bold;
+}
+
+.error-message {
+    -fx-text-fill: #e53e3e;
+    -fx-font-weight: bold;
+}
